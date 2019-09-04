@@ -1,0 +1,48 @@
+.blog {
+    border-radius: $radius;
+    overflow: hidden;
+    box-shadow: $shadow-card;
+    transition: $transition;
+    max-height: 440px;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        bottom: 0;
+        background-color: transparent;
+        background-image: linear-gradient(180deg, transparent 0%, #fff 90%);
+    }
+
+    .card-title {
+        transition: $transition;
+        font-family: $title-font;
+    }
+
+    &:hover {
+        box-shadow: $shadow-card-hover;
+        transform: translateY(-5px);
+
+        .card-title {
+            color: $blue;
+        }
+    }
+
+    .imgHolder {
+        display: block;
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+        @include imgCover;
+    }
+
+    // img {
+    //     width: 100%;
+    // }
+
+    a:hover {
+        text-decoration: none;
+    }
+}

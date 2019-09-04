@@ -1,0 +1,82 @@
+// Styling for the post page
+.post-preview {
+
+  img {
+    max-width: 100%;
+    border-radius: $radius;
+  }
+
+  >a {
+    color: $gray-900;
+
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      color: $primary;
+    }
+
+    >.post-title {
+      font-size: 30px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    >.post-subtitle {
+      font-weight: 300;
+      margin: 0 0 10px;
+    }
+  }
+
+  >.post-meta {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    color: $gray-600;
+
+    >a {
+      text-decoration: none;
+      color: $gray-900;
+
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+        color: $primary;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    >a {
+      >.post-title {
+        font-size: 36px;
+      }
+    }
+  }
+}
+
+.media {
+  box-shadow: $shadow-card;
+  
+  .avatar {
+    @include equal-size(60px);
+    background: #eee;
+    border-radius: $radius;
+    overflow: hidden;
+    margin-right: 15px;
+    @include imgCover;
+  }
+
+  .media {
+    box-shadow: none;
+    border-top: 1px solid #eee;
+
+    .avatar {
+      @include equal-size(50px);
+      background: #eee;
+      border-radius: $radius;
+      overflow: hidden;
+      margin-right: 15px;
+      @include imgCover;
+    }
+  }
+}

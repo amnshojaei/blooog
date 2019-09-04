@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "Copyright &copy; Arman Shojaei 2019"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "This is what I do",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ab laudantium voluptatibus. Magnam atque error, facere culpa laboriosam obcaecati modi facilis aperiam incidunt inventore, soluta velit expedita, cupiditate totam quas?"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Have questions? I have answers",
+    "body": "Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!",
+    "form": {
+      "fullname": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "msg": "Message"
+    }
+  },
+  "send": "send",
+  "latestBlogs": "Latest blogs",
+  "pagination": {
+    "next": "Next ⇾",
+    "prev": "⇽ Prev"
+  }
+}
