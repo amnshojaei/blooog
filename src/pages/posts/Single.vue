@@ -46,6 +46,17 @@
                                 <div class="media-body">
                                     <h5 class="mt-0">{{ child.author_name }}</h5>
                                     <span v-html="child.content.rendered"></span>
+
+                                    <div class="media mt-3 pt-3" v-for="child in child.sub_comments" :key="child.id">
+                                        <div class="avatar">
+                                            <img :src="child.author_avatar_urls['96']" class="mr-3" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <h5 class="mt-0">{{ child.author_name }}</h5>
+                                            <span v-html="child.content.rendered"></span>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
