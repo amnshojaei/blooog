@@ -114,27 +114,32 @@ import { postRequest } from '@/utils/apiRequests'
 
 export default {
     name: 'contact',
-data() {
-    return {
-        contactImg: contactImg,
-        form: {
-            fullname: '',
-            email: '',
-            subject: '',
-            message: ''
+    metaInfo() {
+        return {
+            title: this.$t('nav.contact')
+        }
+    },
+    data() {
+        return {
+            contactImg: contactImg,
+            form: {
+                fullname: '',
+                email: '',
+                subject: '',
+                message: ''
+            }
+        }
+    },
+    methods: {
+        sendForm() {
+            postRequest('/wp-json/contact-form-7/v1/contact-forms', this.form)
+            .then(response => {
+                console.log('Success --> ' + response.data)
+            })
+            .catch(error => {
+                console.log('Error --> ' + error)
+            })
         }
     }
-},
-methods: {
-    sendForm() {
-        postRequest('/wp-json/contact-form-7/v1/contact-forms', this.form)
-        .then(response => {
-            console.log('Success --> ' + response.data)
-        })
-        .catch(error => {
-            console.log('Error --> ' + error)
-        })
-    }
-}
 }
 </script>

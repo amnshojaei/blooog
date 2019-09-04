@@ -33,6 +33,11 @@ import aboutImg from '@/assets/img/about-bg.jpg'
 
 export default {
   name: 'about',
+  metaInfo() {
+      return {
+          title: this.$t('nav.about')
+      }
+  },
   data() {
     return {
       aboutImg: aboutImg

@@ -50,6 +50,11 @@ import Loading from '@/components/Loading.vue'
 
 export default {
     name: 'post',
+    metaInfo() {
+        return {
+            title: this.postData.title.rendered
+        }
+    },
     data() {
         return {
             postData: {
@@ -104,8 +109,6 @@ export default {
 
                             let comments = this.nestingComments(response.data, 0)
                             this.comments = comments
-
-                            console.log('------> ' + JSON.stringify(comments))
 
                         })
                         .catch(error => {

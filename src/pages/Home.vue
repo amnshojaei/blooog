@@ -57,6 +57,11 @@ import headerImage from '@/assets/img/header-bg.png'
 
 export default {
   name: 'home',
+  metaInfo() {
+    return {
+      title: this.$t('nav.home')
+    }
+  },
   data() {
     return {
       headerImage: headerImage,
@@ -71,6 +76,7 @@ export default {
     this.$store.dispatch('getInitialData')
     this.$store.commit('setPagination', this.pagination)
     this.loadPost(this.pagination)
+
   },
   methods: {
     loadPost(pagination) {

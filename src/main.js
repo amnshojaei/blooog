@@ -3,6 +3,9 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import i18n from './i18n'
+import VueMeta from 'vue-meta'
+
+Vue.use(VueMeta)
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '@/assets/sass/app.scss'
