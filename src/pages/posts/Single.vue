@@ -31,38 +31,7 @@
                     <h2 class="font-weight-light text-muted">Comments</h2>
 
                     <!-- Comment cards -->
-                    <div class="media mt-4 mb-5 rounded p-3" v-for="comment in comments" :key="comment.id">
-                        <div class="avatar">
-                            <img :src="comment.author_avatar_urls['96']" class="mr-3" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h5 class="mt-0">{{ comment.author_name }}</h5>
-                            <span v-html="comment.content.rendered"></span>
-
-                            <div class="media mt-3 pt-3" v-for="child in comment.sub_comments" :key="child.id">
-                                <div class="avatar">
-                                    <img :src="child.author_avatar_urls['96']" class="mr-3" alt="">
-                                </div>
-                                <div class="media-body">
-                                    <h5 class="mt-0">{{ child.author_name }}</h5>
-                                    <span v-html="child.content.rendered"></span>
-
-                                    <div class="media mt-3 pt-3" v-for="child in child.sub_comments" :key="child.id">
-                                        <div class="avatar">
-                                            <img :src="child.author_avatar_urls['96']" class="mr-3" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <h5 class="mt-0">{{ child.author_name }}</h5>
-                                            <span v-html="child.content.rendered"></span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
+                    <Comment :comment-data="comments" />
                 </div>
             </div>
         </div>
@@ -74,8 +43,10 @@
 
 <script>
 import { getRequest, postRequest } from '@/utils/apiRequests'
+
+// Components
+import Comment from '@/components/Comment.vue'
 import Loading from '@/components/Loading.vue'
-import { setTimeout } from 'timers';
 
 export default {
     name: 'post',
@@ -177,7 +148,8 @@ export default {
 
     },
     components: {
-        Loading
+        Loading,
+        Comment
     }
 }
 </script>
